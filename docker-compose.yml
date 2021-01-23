@@ -1,0 +1,14 @@
+version: "3"
+services:
+  mysql:
+    # MySQL 8 のサーバーが起動する
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: follow
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      # 今回は Root Password は使わないけど、設定しなければならない
+      MYSQL_ROOT_PASSWORD: password
+    # MySQLで利用するポート 3306 を開けておく
+    ports:
+      - "3306:3306"
